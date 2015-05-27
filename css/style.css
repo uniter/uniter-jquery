@@ -1,0 +1,24 @@
+/**
+ * JS workshop
+ */
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: 'proxima_novalight', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    height: 100%;
+}
+
+.submenu {
+    padding-left: 2em;
+    list-style: disc;
+    display: none;
+}
+
+.submenu--visible {
+    display: block;
+}

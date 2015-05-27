@@ -1,0 +1,30 @@
+{
+  "name": "uniter-jquery",
+  "version": "1.0.0",
+  "description": "Demo of UI interaction with jQuery+Uniter",
+  "main": "index.js",
+  "scripts": {
+    "build:fs": "node build/fs",
+    "build": "npm run build:fs && browserify js/app --standalone=demoApp > dist/bundle.js",
+    "webpack": "webpack"
+  },
+  "keywords": [
+    "php",
+    "uniter",
+    "browserify",
+    "fs"
+  ],
+  "author": "asmblah",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "json-loader": "^0.5.1",
+    "uniter": "^1.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.0",
+    "glob": "^5.0.6",
+    "node-libs-browser": "^0.5.0",
+    "webpack": "^1.9.7"
+  }
+}
