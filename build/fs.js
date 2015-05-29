@@ -6,9 +6,13 @@
 'use strict';
 
 var fs = require('fs'),
-    glob = require('glob'),
+    globby = require('globby'),
     path = require('path'),
-    files = glob.sync(__dirname + '/../php/**/*.php'),
+    files = globby.sync([
+        __dirname + '/../php/**/*.php',
+        '!' + __dirname + '/../php/src/Demo/PhpQuery/**',
+        '!' + __dirname + '/../php/src/Demo/QueryPath/**'
+    ]),
     fileData = {},
     root = __dirname + '/..';
 
