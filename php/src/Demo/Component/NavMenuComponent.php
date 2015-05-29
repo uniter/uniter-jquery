@@ -7,6 +7,8 @@
 
 namespace Demo\Component;
 
+use Demo\PhpQuery\PhpQuery;
+
 class NavMenuComponent
 {
     const VISIBLE_CLASS = 'submenu--visible';
@@ -17,7 +19,7 @@ class NavMenuComponent
     private $body;
 
     /**
-     * @var callable
+     * @var PhpQuery
      */
     private $jQuery;
 
@@ -26,7 +28,7 @@ class NavMenuComponent
      */
     private $menu;
 
-    public function __construct(callable $jQuery, $body, $menu)
+    public function __construct($jQuery, $body, $menu)
     {
         $this->body = $body;
         $this->jQuery = $jQuery;

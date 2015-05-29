@@ -7,6 +7,7 @@
 
 namespace Demo\QueryPath\Extension;
 
+use Demo\PhpQuery\CssSelectorMatcher;
 use DOMNode;
 use QueryPath\CSS\DOMTraverser;
 use QueryPath\Extension;
@@ -65,11 +66,13 @@ class DomEventExtension implements Extension
         return $this->qp;
     }
 
-    public function trigger($eventType)
+    public function trigger($event)
     {
-        foreach ($this->qp as $element) {
-            $event = new Event($eventType);
+        if (is_string($event)) {
+            $event = new Event($event);
+        }
 
+        foreach ($this->qp as $element) {
             $this->triggerEvent($element->get(0), $event);
         }
 
@@ -97,7 +100,7 @@ class DomEventExtension implements Extension
                             $boundHandler = $handler->bindTo($triggeredNode);
                             $boundHandler($event);
 
-                            if ($event->isDefaultPrevented()) {
+                            if ($event->isPropagationStopped()) {
                                 return;
                             }
                         }
@@ -106,7 +109,7 @@ class DomEventExtension implements Extension
             }
         }
 
-        if ($node->parentNode) {
+        if ($node->parentNode && !$event->isPropagationStopped()) {
             $triggeredNodes[] = $node;
             $this->triggerEvent($node->parentNode, $event, $triggeredNodes);
         }
@@ -114,6 +117,8 @@ class DomEventExtension implements Extension
 
     private function matchesSelector(DOMNode $node, $selector)
     {
-        return qp($node)->is($selector);
+        $matcher = new CssSelectorMatcher();
+
+        return $matcher->matches($node, $selector);
     }
 }

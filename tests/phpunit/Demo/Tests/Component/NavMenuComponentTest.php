@@ -8,6 +8,9 @@
 namespace Demo\Tests\Component;
 
 use Demo\Component\NavMenuComponent;
+use Demo\PhpQuery\CssSelectorMatcher;
+use Demo\PhpQuery\PhpQuery;
+use Demo\QueryPath\Extension\Event;
 use PHPUnit_Framework_TestCase;
 
 class NavMenuComponentTest extends PHPUnit_Framework_TestCase
@@ -26,8 +29,16 @@ class NavMenuComponentTest extends PHPUnit_Framework_TestCase
     private $menuItem2;
     private $submenu2;
 
+    /**
+     * @var PhpQuery
+     */
+    private $phpQuery;
+
     public function setUp()
     {
+        $phpQuery = new PhpQuery(new CssSelectorMatcher());
+        $this->phpQuery = $phpQuery;
+
         $html = <<<HTML
 <body>
     <p id="aParagraph"></p>
@@ -50,7 +61,7 @@ class NavMenuComponentTest extends PHPUnit_Framework_TestCase
     </ol>
 </body>
 HTML;
-        $dom = qp($html);
+        $dom = $phpQuery($html);
 
         $this->body = $dom->find('body');
         $this->aParagraph = $dom->find('#aParagraph');
@@ -65,7 +76,7 @@ HTML;
         $this->menuItem2 = $dom->find('#menuItem2');
         $this->submenu2 = $dom->find('#submenu2');
 
-        $this->component = new NavMenuComponent('qp', $this->body, $this->menu);
+        $this->component = new NavMenuComponent($phpQuery, $this->body, $this->menu);
         $this->component->initialize();
     }
 
@@ -79,5 +90,88 @@ HTML;
         $this->menuItem1->click();
 
         $this->assertTrue($this->submenu1->hasClass('submenu--visible'));
+    }
+
+    public function testDoesntShowSecondMenuItemsSubmenuAfterClickingFirstMenuItem()
+    {
+        $this->menuItem1->click();
+
+        $this->assertFalse($this->submenu2->hasClass('submenu--visible'));
+    }
+
+    public function testStopsPropagationOfClickEventAfterClickingFirstMenuItem()
+    {
+        $event = new Event('click');
+
+        $this->menuItem1->trigger($event);
+
+        $this->assertTrue($event->isPropagationStopped());
+    }
+
+    public function testPreventsDefaultActionOfClickEventAfterClickingFirstMenuItem()
+    {
+        $event = new Event('click');
+
+        $this->menuItem1->trigger($event);
+
+        $this->assertTrue($event->isDefaultPrevented());
+    }
+
+    public function testHidesFirstMenuItemsSubmenuAfterClickingFirstThenSecondMenuItems()
+    {
+        $this->menuItem1->click();
+        $this->menuItem2->click();
+
+        $this->assertFalse($this->submenu1->hasClass('submenu--visible'));
+    }
+
+    public function testShowsSecondMenuItemsSubmenuAfterClickingFirstThenSecondMenuItems()
+    {
+        $this->menuItem1->click();
+        $this->menuItem2->click();
+
+        $this->assertTrue($this->submenu2->hasClass('submenu--visible'));
+    }
+
+    public function testShowsSubSubmenuAfterClickingFirstMenuItemThenOpeningSubSubmenu()
+    {
+        $this->menuItem1->click();
+        $this->menuItem1_1->click();
+
+        $this->assertTrue($this->submenu1_1->hasClass('submenu--visible'));
+    }
+
+    public function testDoesntHideSubSubmenusParentAfterClickingFirstMenuItemThenOpeningSubSubmenu()
+    {
+        $this->menuItem1->click();
+        $this->menuItem1_1->click();
+
+        $this->assertTrue($this->submenu1->hasClass('submenu--visible'));
+    }
+
+    public function testHidesSubSubmenuAfterClickingFirstMenuItemThenOpeningSubSubmenuThenClickingOutsideMenu()
+    {
+        $this->menuItem1->click();
+        $this->menuItem1_1->click();
+        $this->aParagraph->click();
+
+        $this->assertFalse($this->submenu1_1->hasClass('submenu--visible'));
+    }
+
+    public function testHidesSubSubmenusParentMenuAfterClickingFirstMenuItemThenOpeningSubSubmenuThenClickingOutsideMenu()
+    {
+        $this->menuItem1->click();
+        $this->menuItem1_1->click();
+        $this->aParagraph->click();
+
+        $this->assertFalse($this->submenu1->hasClass('submenu--visible'));
+    }
+
+    public function testHidesFirstMenuItemsSubmenuAfterClickingFirstMenuItemThenClickingOutsideMenu()
+    {
+        $this->menuItem1->click();
+        $this->aParagraph->click();
+
+        $this->assertFalse($this->submenu1->hasClass('submenu--visible'));
     }
 }
