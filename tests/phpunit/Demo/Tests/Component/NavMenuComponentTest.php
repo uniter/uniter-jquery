@@ -141,6 +141,15 @@ HTML;
         $this->assertTrue($this->submenu1_1->hasClass('submenu--visible'));
     }
 
+    public function testHidesFirstSubSubmenuAfterClickingSecondMenuItem()
+    {
+        $this->menuItem1->click();
+        $this->menuItem1_1->click();
+        $this->menuItem2->click();
+
+        $this->assertFalse($this->submenu1->hasClass('submenu--visible'));
+    }
+
     public function testDoesntHideSubSubmenusParentAfterClickingFirstMenuItemThenOpeningSubSubmenu()
     {
         $this->menuItem1->click();

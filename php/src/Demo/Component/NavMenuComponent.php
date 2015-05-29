@@ -40,24 +40,7 @@ class NavMenuComponent
         $component = $this;
         $jQuery = $this->jQuery;
         $openSubmenu = $jQuery();
-
-        $this->menu->on('click', '[data-submenu]', function ($event) use ($component, $jQuery, &$openSubmenu) {
-            $selector = $jQuery($this)->data('submenu');
-            $submenu = $component->menu->find($selector);
-
-            if ($openSubmenu->length && !$jQuery->contains($openSubmenu->{0}, $submenu->{0})) {
-                $openSubmenu->removeClass(self::VISIBLE_CLASS);
-            }
-
-            $submenu->addClass(self::VISIBLE_CLASS);
-            $openSubmenu = $submenu;
-
-            $event->stopPropagation();
-            $event->preventDefault();
-        });
-
-        $this->body->click(function () use ($component, $jQuery, &$openSubmenu) {
-            // Close all parent submenus of the open one
+        $closeOpenSubmenu = function () use ($component, $jQuery, &$openSubmenu) {
             $openSubmenu->parents('[data-submenu]')->each(function () use ($component, $jQuery) {
                 $selector = $jQuery($this)->data('submenu');
                 $submenu = $component->menu->find($selector);
@@ -66,6 +49,27 @@ class NavMenuComponent
             });
 
             $openSubmenu->removeClass(self::VISIBLE_CLASS);
-        });
+        };
+
+        $this->menu->on(
+            'click',
+            '[data-submenu]',
+            function ($event) use ($component, $jQuery, &$openSubmenu, $closeOpenSubmenu) {
+                $selector = $jQuery($this)->data('submenu');
+                $submenu = $component->menu->find($selector);
+
+                if ($openSubmenu->length && !$jQuery->contains($openSubmenu->{0}, $submenu->{0})) {
+                    $closeOpenSubmenu();
+                }
+
+                $submenu->addClass(self::VISIBLE_CLASS);
+                $openSubmenu = $submenu;
+
+                $event->stopPropagation();
+                $event->preventDefault();
+            }
+        );
+
+        $this->body->click($closeOpenSubmenu);
     }
 }
