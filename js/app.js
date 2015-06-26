@@ -36,6 +36,6 @@ phpEngine.getStdout().on('data', function (data) {
 });
 
 // Go!
-phpEngine.execute(getFileData('php/app.php')).fail(function (error) {
+phpEngine.execute('<?php require("php/app.php");').fail(function (error) {
     console.warn('ERROR: ' + error.toString());
 });
