@@ -3,6 +3,10 @@ Uniter PHP app demo
 
 An app with client-side logic written in PHP.
 
+[
+![App demo using PHP with Uniter and jQuery](https://uniter.github.io/uniter-jquery/img/app_demo.gif)
+](https://uniter.github.io/uniter-jquery/)
+
 PHP and JS files are compiled down to a single JS bundle file.
 
 Compile with Browserify:
