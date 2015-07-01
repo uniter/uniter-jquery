@@ -1,7 +1,9 @@
 Uniter PHP app demo
 ===================
 
-A demo of a PHP application, with PHP and JS files compiled down to a single JS bundle file.
+An app with client-side logic written in PHP.
+
+PHP and JS files are compiled down to a single JS bundle file.
 
 Compile with Browserify:
 
