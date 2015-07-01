@@ -1,7 +1,7 @@
 Uniter PHP app demo
 ===================
 
-An app with client-side logic written in PHP.
+Easily write client-side logic in PHP by compiling to JavaScript:
 
 [
 ![App demo using PHP with Uniter and jQuery](https://uniter.github.io/uniter-jquery/img/app_demo.gif)
