@@ -26,6 +26,14 @@ h1, p {
     display: block;
 }
 
+div.full_row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left ;
+}
+
 div.all_demos {
     width: 90%;
     margin: 0 auto;
@@ -48,9 +56,11 @@ div.demo_standard_entry {
 
 }
 
-div.pending_demo_entry {
-    background-color: gray;
-    cursor: not-allowed;
+div.pending_demo_entry,
+div.pending_demo_entry:hover,
+div.pending_demo_button:hover{
+    background-color: lightgrey !important;
+    cursor: not-allowed !important;
 }
 
 div.demo_title_entry {
@@ -75,6 +85,15 @@ div.right_cell {
     display: block;
     float: left;
     width: 50%;
+    min-height: 120px;
+}
+
+div.left_three_cell,
+div.centre_three_cell,
+div.right_three_cell {
+    display: block;
+    float: left;
+    width: 33.3%;
     min-height: 120px;
 }
 div.left_cell:hover,
@@ -102,4 +121,12 @@ div#homepage_loading img {
     margin: 0 auto;
     display: block;
 
+}
+
+div#demo_slider {
+    margin: 0 auto;
+    display: none;
+    height: 250px;
+    width: 40%;
+    background-color: firebrick;
 }
