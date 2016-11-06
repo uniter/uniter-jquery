@@ -21,3 +21,16 @@ body {
 .submenu--visible {
     display: block;
 }
+
+div.demos_all {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+div.demos_entry {
+    width: 100%;
+    margin: 0 5px;
+    display: block;
+    float: left;
+}
