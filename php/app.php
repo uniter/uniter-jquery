@@ -8,6 +8,8 @@ spl_autoload_register(function ($class) {
 require_once "php/src/HelloWorld/app.php" ;
 require_once "php/src/JQueryColourDemo/app.php" ;
 require_once "php/src/WindowAlertDemo/app.php" ;
+require_once "php/src/UsingClasses/app.php" ;
+require_once "php/src/UsingNamespaces/app.php" ;
 require_once "php/src/CountCurrentElements/app.php" ;
 require_once "php/src/Demo/app.php" ;
 
