@@ -22,15 +22,52 @@ body {
     display: block;
 }
 
-div.demos_all {
+div.all_demos {
     width: 90%;
     margin: 0 auto;
     display: block;
 }
 
-div.demos_entry {
+div.demo_entry {
     width: 100%;
-    margin: 0 5px;
+    margin: 0 5px 10px;
     display: block;
     float: left;
+    border: 1px solid darkgray;
+    min-height: 120px;
+}
+
+div.demo_standard_entry {
+
+}
+
+div.demo_title_entry {
+
+}
+
+div.demo_entry {
+    text-align: center ;
+    font-size: 1.25em;
+}
+
+div.demo_entry a {
+    font-size: 2em;
+}
+
+div.left_cell,
+div.right_cell {
+    display: block;
+    float: left;
+    width: 50%;
+    min-height: 120px;
+}
+div.left_cell:hover,
+div.right_cell:hover {
+    background-color: deepskyblue;
+}
+
+div.demo_entry:hover,
+.demo_button:hover {
+    background-color: darkolivegreen;
+    cursor: pointer;
 }
