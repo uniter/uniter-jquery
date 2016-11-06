@@ -11,6 +11,9 @@ require_once "php/src/WindowAlertDemo/app.php" ;
 require_once "php/src/UsingClasses/app.php" ;
 require_once "php/src/UsingNamespaces/app.php" ;
 require_once "php/src/CountCurrentElements/app.php" ;
+require_once "php/src/RandomNumbers/app.php" ;
+require_once "php/src/Fades/app.php" ;
+require_once "php/src/Slides/app.php" ;
 require_once "php/src/Demo/app.php" ;
 
 $entries = $jQuery('div.demo_entry')->length ;
