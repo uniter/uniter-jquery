@@ -1,21 +1,22 @@
 <?php
 
-
-function update_counter($jQuery, $count) {
-    $jQuery('h2#counter')->html($count);
-}
-
-$select_random_closure = function() use ($jQuery, $jsMath, $console){
-    $console->log("something to say 1") ;
-    $standard_rand = $jsMath->random() ;
-    $console->log("something to say 2", $standard_rand) ;
-    $larger = $jsMath->random() * 10 ;
-    $console->log("something to say 3, $larger") ;
-    $endRand = $jsMath->floor($larger + 1) ;
-    $console->log("something to say 4, $endRand") ;
-    update_counter($jQuery, $endRand);
-    $console->log("something to say 5, $endRand") ;
+$up_slide_closure = function() use ($jQuery){
+    $jQuery('div#demo_slider')->slideUp("slow") ;
+    $jQuery('div#demo_slider_wrap')->css("height", 0) ;
 };
 
+$toggle_slide_closure = function() use ($jQuery){
+    $jQuery('div#demo_slider')->slideToggle("slow") ;
+    if ($jQuery('div#demo_slider')->css('display') == "block"){
+        $jQuery('div#demo_slider_wrap')->css("height", 255) ;
+    }
+};
 
-$jQuery('div#random_select_button')->on('click', $select_random_closure);
+$down_slide_closure = function() use ($jQuery){
+    $jQuery('div#demo_slider')->slideDown("slow") ;
+    $jQuery('div#demo_slider_wrap')->css("height", 255) ;
+};
+
+$jQuery('div#up_slide_button')->on('click', $up_slide_closure);
+$jQuery('div#toggle_slide_button')->on('click', $toggle_slide_closure);
+$jQuery('div#down_slide_button')->on('click', $down_slide_closure);
