@@ -12,6 +12,10 @@ body {
     min-height: 80%;
 }
 
+h1, p {
+    text-align: center;
+}
+
 .submenu {
     padding-left: 2em;
     list-style: disc;
@@ -20,4 +24,109 @@ body {
 
 .submenu--visible {
     display: block;
+}
+
+div.full_row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left ;
+}
+
+div.all_demos {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+div.demo_entry {
+    width: 100%;
+    margin: 0 5px 10px;
+    display: block;
+    float: left;
+    border: 1px solid darkgray;
+    min-height: 120px;
+    background-color: white;
+    text-align: center ;
+    font-size: 1.25em;
+}
+
+div.demo_standard_entry {
+
+}
+
+div.pending_demo_entry,
+div.pending_demo_entry:hover,
+div.pending_demo_button:hover{
+    background-color: lightgrey !important;
+    cursor: not-allowed !important;
+}
+
+div.demo_title_entry {
+
+}
+
+div.demo_title_entry:hover {
+    background-color: white !important;
+}
+
+div.demo_entry a {
+    font-size: 2em;
+}
+
+div.demo_show_more {
+    max-height: 80px;
+    border: none;
+}
+
+div.left_cell,
+div.right_cell {
+    display: block;
+    float: left;
+    width: 50%;
+    min-height: 120px;
+}
+
+div.left_three_cell,
+div.centre_three_cell,
+div.right_three_cell {
+    display: block;
+    float: left;
+    width: 33.3%;
+    min-height: 120px;
+}
+div.left_cell:hover,
+div.right_cell:hover {
+    background-color: deepskyblue;
+}
+
+div.demo_entry:hover,
+.demo_button:hover {
+    background-color: darkolivegreen;
+    cursor: pointer;
+}
+
+/*div#homepage_slider {*/
+    /*display: hidden;*/
+/*}*/
+
+div#homepage_slider {
+    display: none;
+    /*height: 1010px;*/
+    background-color: snow;
+}
+
+div.all_demos img {
+    margin: 0 auto;
+    display: block;
+
+}
+
+div#demo_slider {
+    margin: 0 auto;
+    display: none;
+    height: 250px;
+    width: 40%;
+    background-color: firebrick;
 }
