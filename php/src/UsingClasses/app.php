@@ -3,14 +3,14 @@
 
 class SimpleClass {
 
-    public function attachOnClick($jQuery) {
-        $closure = function() use ($jQuery){
-            $jQuery('body')->css('background-color', 'blue') ;
+    public function attachOnClick($jQuery, $window) {
+        $closure = function() use ($window){
+            $window->alert('A browser alert in real time from a php class') ;
         };
-        $jQuery('body')->on('click', $closure);
+        $jQuery('body#using_classes_alert_button')->on('click', $closure);
     }
 
 }
 
 $sc = new SimpleClass();
-$sc->attachOnClick($jQuery) ;
+$sc->attachOnClick($jQuery, $window) ;
