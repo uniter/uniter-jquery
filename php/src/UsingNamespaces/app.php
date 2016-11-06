@@ -16,4 +16,4 @@ $closure = function() use ($jQuery){
     $jQuery('')->css('background-color', 'blue') ;
 };
 
-$jQuery('body')->on('click', $closure);
+$jQuery('body#using_namespaces')->on('click', $closure);
