@@ -1,11 +1,11 @@
 <?php
 
-namespace UsingNamespaces\Person ;
+namespace UsingNamespaces\Lorem ;
 
-class Food {
+class Ipsum {
 
     public $options = array(
-        "cow", "sheep", "chickens", "horse", "pig", "eggs", "duck", "fish", "chips", "quail", "mushrooms"
+        "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Immo", "alio", "genere",
     )  ;
 
 }
