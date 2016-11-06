@@ -13,4 +13,7 @@ require_once "php/src/UsingNamespaces/app.php" ;
 require_once "php/src/CountCurrentElements/app.php" ;
 require_once "php/src/Demo/app.php" ;
 
-$jQuery('div#homepage_slider')->slideDown('slow');
+$fade_in_closure = function() use ($jQuery) {
+    $jQuery('div#homepage_loading')->slideUp("slow") ;
+} ;
+$jQuery('div#homepage_slider')->fadeIn("slow", $fade_in_closure) ;
