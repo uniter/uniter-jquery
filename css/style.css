@@ -54,12 +54,19 @@ div.demo_title_entry:hover {
 }
 
 div.demo_entry {
+    display: block;
+    background-color: white;
     text-align: center ;
     font-size: 1.25em;
 }
 
 div.demo_entry a {
     font-size: 2em;
+}
+
+div.demo_show_more {
+    max-height: 80px;
+    border: none;
 }
 
 div.left_cell,
@@ -80,6 +87,18 @@ div.demo_entry:hover,
     cursor: pointer;
 }
 
+/*div#homepage_slider {*/
+    /*display: hidden;*/
+/*}*/
+
 div#homepage_slider {
     display: none;
+    height: 1010px;
+    background-color: snow;
+}
+
+div#homepage_loading img {
+    margin: 0 auto;
+    display: block;
+
 }
