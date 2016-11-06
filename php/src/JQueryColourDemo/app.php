@@ -1,7 +1,7 @@
 <?php
 
-$closure = function() use ($jQuery){
-    $jQuery('body')->css('background-color', 'blue') ;
+$colour_change_closure = function() use ($jQuery){
+    $jQuery('body')->css('background-color', 'darkgray') ;
 };
 
-$jQuery('body')->on('click', $closure);
+$jQuery('body#jquery_simple_colour_change')->on('click', $colour_change_closure);
