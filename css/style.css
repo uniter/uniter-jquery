@@ -71,3 +71,7 @@ div.demo_entry:hover,
     background-color: darkolivegreen;
     cursor: pointer;
 }
+
+div#homepage_slider {
+    display: none;
+}
