@@ -7,7 +7,7 @@ class SimpleClass {
         $closure = function() use ($window){
             $window->alert('A browser alert in real time from a php class') ;
         };
-        $jQuery('body#using_classes_alert_button')->on('click', $closure);
+        $jQuery('h2#using_classes_alert_button')->on('click', $closure);
     }
 
 }
