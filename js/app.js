@@ -35,6 +35,10 @@ var this_window = window ;
 phpEngine.expose(this_window, 'window');
 
 // Expose Window to PHPland
+var this_console = console ;
+phpEngine.expose(this_console, 'console');
+
+// Expose Window to PHPland
 var jsMath = Math ;
 phpEngine.expose(jsMath, 'jsMath');
 
