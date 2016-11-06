@@ -81,5 +81,5 @@ div.demo_entry:hover,
 }
 
 div#homepage_slider {
-    height: 325px;
+    display: none;
 }
