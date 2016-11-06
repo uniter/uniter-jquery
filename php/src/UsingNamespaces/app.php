@@ -4,9 +4,10 @@ namespace UsingNamespaces;
 
 use UsingNamespaces\Logic ;
 
-$closure = function() use ($jQuery, $jsMath) {
-    $random_number = $jsMath->math->floor(($jsMath->math->random() * 10) + 1);
-    $jQuery('div#display_random')->html($random_number) ;
+$using_namespaces_closure = function() use ($jQuery, $jsMath) {
+    $larger = $jsMath->random() * 10 ;
+    $endRand = $jsMath->floor($larger + 1) ;
+    $jQuery('h2#counter')->html($endRand);
 };
 
-$jQuery('h2#using_namespaces')->on('click', $closure);
+$jQuery('div#using_namespaces_button')->on('click', $using_namespaces_closure);
