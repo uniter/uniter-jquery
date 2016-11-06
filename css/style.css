@@ -45,6 +45,10 @@ div.demo_title_entry {
 
 }
 
+div.demo_title_entry:hover {
+    background-color: white !important;
+}
+
 div.demo_entry {
     text-align: center ;
     font-size: 1.25em;
