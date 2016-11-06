@@ -1,7 +1,7 @@
 <?php
 
-$add_element_closure = function() use ($jQuery){
-    $jQuery('h2#counter')->html('Hello World!');
+$hello_world_closure = function() use ($jQuery){
+    $jQuery('h2#hello_world_value')->html('Hello World!');
 };
 
-$jQuery('div#add_element')->on('click', $add_element_closure);
+$jQuery('h2#hello_world_button')->on('click', $hello_world_closure);
