@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Uniter PHP NavMenuComponent demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="/Assets/Modules/DefaultSkin/js/jquery-full.js"></script>
+        <script src="/assets/jquery-full.js"></script>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -13,40 +13,48 @@
             Uniter PHP in Browser Demos
         </h1>
         <p>
-            The in-browser logic for all these pages are written entirely in PHP,
-            see <a href="//github.com/uniter/uniter-jquery/blob/master/php/src/Demo/Component/NavMenuComponent.php">NavMenuComponent</a>
+            The in-browser logic for all these pages is written entirely in PHP,
+            see <a target="_blank" href="//github.com/uniter/uniter-jquery/blob/master/php/src/Demo/Component/NavMenuComponent.php">NavMenuComponent</a>
             for details. All Javascript and JQuery object and method calls come directly from php code.
         </p>
         <p>
             The tests are written using PHPUnit and run on the command line (for now,)
-            see <a href="//github.com/uniter/uniter-jquery/blob/master/tests/phpunit/Demo/Tests/Component/NavMenuComponentTest.php">NavMenuComponentTest</a>.
+            see <a target="_blank" href="//github.com/uniter/uniter-jquery/blob/master/tests/phpunit/Demo/Tests/Component/NavMenuComponentTest.php">NavMenuComponentTest</a>.
         </p>
         <p>
-            No JavaScript was used in the making of these demos :)
+            (Almost) No JavaScript was used in the making of these demos :)
         </p>
 
         <div class="all_demos">
             <div class="demo_entry">
-                Call an alert on the window from PHP Code
-                <a href="#">Hello World</a>
+                <p>Call an alert on the window from PHP Code</p>
+                <a target="_blank" href="/hello_world.html">Hello World</a>
             </div>
             <div class="demo_entry">
-                Call an alert on the window
-                <a href="#">Window Alert</a>
+                <p>Call an alert on the window</p>
+                <a target="_blank" href="/window_alert.html">Window Alert</a>
             </div>
             <div class="demo_entry">
-                The first click anywhere on this page will call a jQuery css change to the page called directly from
-                PHP code
-                <a href="#">JQuery Colour Change</a>
+                <p>The first click anywhere on this page will call a jQuery css change to the page called directly from
+                PHP code</p>
+                <a target="_blank" href="/jquery_simple_colour_change.html">JQuery Colour Change</a>
             </div>
             <div class="demo_entry">
-                <a href="#">Using Classes</a>
+                <p>Adding, Removing and Counting HTML Elements on a page</p>
+                <a target="_blank" href="/counting_elements.html">Adding, Removing and Counting HTML Elements on a page</a>
             </div>
             <div class="demo_entry">
-                <a href="#">Using Namespaces</a>
+                <p>PHP Code Written using classes, running in browser</p>
+                <a target="_blank" href="/using_classes.html">Using Classes</a>
             </div>
             <div class="demo_entry">
-                <a href="#">JQuery Colour Change</a>
+                <p>PHP Code Written using classes and namespaces, running in browser</p>
+                <a target="_blank" href="/using_namespaces.html">Using Namespaces</a>
+            </div>
+            <div class="demo_entry">
+                <p>Clicks on this page will call a random jQuery css colour change to the page
+                called directly from PHP code</p>
+                <a target="_blank" href="/jquery_dynamic_colour_change.html">JQuery Dynamic Colour Change</a>
             </div>
             <div class="demo_entry">
                 Here we use php to call bind a method to a button click, randomly changing the colour of the page
@@ -55,53 +63,6 @@
             </div>
         </div>
 
-
-
-
-        <nav>
-            <ol class="primary-nav">
-                <li data-submenu="#submenu1">
-                    <a href="#">Menu 1</a>
-                    <ol class="submenu" id="submenu1">
-                        <li data-submenu="#submenu1_1">
-                            <a href="#">Menu 1 sub 1</a>
-
-                            <ol class="submenu" id="submenu1_1">
-                                <li data-submenu="#submenu1_1_1">
-                                    <a href="#">Menu 1 sub 1 sub 1</a>
-
-                                    <ol class="submenu" id="submenu1_1_1">
-                                        <li>
-                                            <a href="#">Menu 1 sub 1 sub 1 sub 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Menu 1 sub 1 sub 1 sub 2</a>
-                                        </li>
-                                    </ol>
-                                </li>
-                                <li>
-                                    <a href="#">Menu 1 sub 1 sub 2</a>
-                                </li>
-                            </ol>
-                        </li>
-                        <li>
-                            <a href="#">Menu 1 sub 2</a>
-                        </li>
-                    </ol>
-                </li>
-                <li data-submenu="#submenu2">
-                    <a href="#">Menu 2</a>
-                    <ol class="submenu" id="submenu2">
-                        <li>
-                            <a href="#">Menu 2 sub 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Menu 2 sub 2</a>
-                        </li>
-                    </ol>
-                </li>
-            </ol>
-        </nav>
         <a href="https://github.com/uniter/uniter-jquery">
             <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
         </a>
