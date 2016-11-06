@@ -30,6 +30,14 @@ phpEngine.configure({
 // Expose jQuery to PHPland
 phpEngine.expose($, 'jQuery');
 
+// Expose Window to PHPland
+var this_window = window ;
+phpEngine.expose(this_window, 'window');
+
+// Expose Window to PHPland
+var jsMath = Math ;
+phpEngine.expose(jsMath, 'jsMath');
+
 // Write content HTML to the DOM
 phpEngine.getStdout().on('data', function (data) {
     document.body.insertAdjacentHTML('beforeEnd', data);
