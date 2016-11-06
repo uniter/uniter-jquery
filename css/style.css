@@ -93,7 +93,7 @@ div.demo_entry:hover,
 
 div#homepage_slider {
     display: none;
-    height: 1010px;
+    /*height: 1010px;*/
     background-color: snow;
 }
 
