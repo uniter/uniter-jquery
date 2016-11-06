@@ -12,7 +12,7 @@ spl_autoload_register(function ($class) {
 $navMenu = new NavMenuComponent(
     $jQuery,
     $jQuery('body'),
-    $jQuery('.primary-nav')
+    $jQuery('ol#primary-nav')
 );
 
 $navMenu->initialize();
