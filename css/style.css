@@ -117,7 +117,7 @@ div#homepage_slider {
     background-color: snow;
 }
 
-div#homepage_loading img {
+div.all_demos img {
     margin: 0 auto;
     display: block;
 
