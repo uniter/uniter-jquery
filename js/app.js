@@ -27,20 +27,11 @@ phpEngine.configure({
     }
 });
 
-// Expose jQuery to PHPland
+// Expose jQuery, window, Math and Console to PHPland
 phpEngine.expose($, 'jQuery');
-
-// Expose Window to PHPland
-var this_window = window ;
-phpEngine.expose(this_window, 'window');
-
-// Expose Window to PHPland
-var this_console = console ;
-phpEngine.expose(this_console, 'console');
-
-// Expose Window to PHPland
-var jsMath = Math ;
-phpEngine.expose(jsMath, 'jsMath');
+phpEngine.expose(window, 'window');
+phpEngine.expose(console, 'console');
+phpEngine.expose(Math, 'jsMath');
 
 // Write content HTML to the DOM
 phpEngine.getStdout().on('data', function (data) {
