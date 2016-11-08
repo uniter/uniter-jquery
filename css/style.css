@@ -96,6 +96,7 @@ div.right_three_cell {
     width: 33.3%;
     min-height: 120px;
 }
+
 div.left_cell:hover,
 div.right_cell:hover {
     background-color: deepskyblue;
@@ -107,13 +108,8 @@ div.demo_entry:hover,
     cursor: pointer;
 }
 
-/*div#homepage_slider {*/
-    /*display: hidden;*/
-/*}*/
-
 div#homepage_slider {
     display: none;
-    /*height: 1010px;*/
     background-color: snow;
 }
 
