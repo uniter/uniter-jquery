@@ -58,7 +58,7 @@ div.demo_standard_entry {
 
 div.pending_demo_entry,
 div.pending_demo_entry:hover,
-div.pending_demo_button:hover{
+div.pending_demo_button:hover {
     background-color: lightgrey !important;
     cursor: not-allowed !important;
 }
