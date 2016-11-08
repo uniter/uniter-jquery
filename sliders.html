@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="UTF-8">
-        <title>Uniter PHP Faders Demo</title>
+        <title>Uniter PHP Sliders Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="/assets/jquery-full.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body id="counting_elements">
-        <h1>
-            Uniter PHP Faders Demo
-        </h1>
-        <p>
-            The logic for this page is written entirely in PHP,
-            see <a href="//github.com/PharaohTools/uniter-jquery/blob/master/php/src/Sliders/app.php">Sliders</a>
-            for a look at the php code.
-        </p>
-        <!--<p>-->
-            <!--The tests are written using PHPUnit and run on the command line (for now,)-->
-            <!--see <a href="//github.com/PharaohTools/uniter-jquery/blob/master/tests/phpunit/Demo/Tests/Component/NavMenuComponentTest.php">NavMenuComponentTest</a>.-->
-        <!--</p>-->
 
-        <div>
+    <body id="counting_elements">
+
+        <div class="full_row">
+            <h1>
+                Uniter PHP Sliders Demo
+            </h1>
+            <p>
+                The logic for this page is written entirely in PHP,
+                see <a href="//github.com/uniter/uniter-jquery/blob/master/php/src/Sliders/app.php">Sliders</a>
+                for a look at the php code.
+            </p>
         </div>
+
         <div class="full_row">
             <div class="all_demos" id="demo_element_list">
                 <div class="demo_entry demo_title_entry">
@@ -39,6 +37,7 @@
                 </div>
             </div>
         </div>
+
         <div class="full_row" id="demo_slider_wrap">
             <div id="demo_slider">
 
@@ -46,11 +45,18 @@
         </div>
 
         <div class="full_row">
-            <h2><a href="/index.html">Back To Home</a></h2>
+            <h2>
+                <a href="/index.html">
+                    Back To Home
+                </a>
+            </h2>
             <a href="https://github.com/uniter/uniter-jquery">
-                <img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_green.png" alt="Fork me on GitHub">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_green.png" alt="Fork me on GitHub" />
             </a>
         </div>
+
         <script src="dist/bundle.js"></script>
+
     </body>
+
 </html>
