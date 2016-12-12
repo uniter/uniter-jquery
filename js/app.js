@@ -8,7 +8,7 @@
 var $ = require('jquery'),
     fileData = require('../dist/fileData.js'),
     hasOwn = {}.hasOwnProperty,
-    uniter = require('uniter/js/main'),
+    uniter = require('uniter'),
     phpEngine = uniter.createEngine('PHP'),
     output = document.getElementById('output');
 
