@@ -1,19 +1,21 @@
 <?php
 
-namespace Demo;
+require_once "php/src/HelloWorld/app.php" ;
+require_once "php/src/JQueryColourDemo/app.php" ;
+require_once "php/src/WindowAlertDemo/app.php" ;
+require_once "php/src/UsingClasses/app.php" ;
+require_once "php/src/UsingNamespaces/app.php" ;
+require_once "php/src/CountCurrentElements/app.php" ;
+require_once "php/src/RandomNumbers/app.php" ;
+require_once "php/src/Fades/app.php" ;
+require_once "php/src/Slides/app.php" ;
+require_once "php/src/Demo/app.php" ;
 
-use Demo\Component\NavMenuComponent;
+$entries = $jQuery('div.demo_entry')->length ;
+$full_height = $entries * 130 ;
+$jQuery('div#homepage_slider')->css("height", $full_height) ;
 
-spl_autoload_register(function ($class) {
-    $class = 'php/src/' . str_replace("\\", '/', $class) . '.php';
-
-    require_once $class;
-});
-
-$navMenu = new NavMenuComponent(
-    $jQuery,
-    $jQuery('body'),
-    $jQuery('.primary-nav')
-);
-
-$navMenu->initialize();
+$fade_in_closure = function() use ($jQuery) {
+    $jQuery('div#homepage_loading')->slideUp("slow") ;
+} ;
+$jQuery('div#homepage_slider')->fadeIn("slow", $fade_in_closure) ;

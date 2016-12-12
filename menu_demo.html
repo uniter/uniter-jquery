@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Uniter PHP NavMenuComponent demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <div class="full_row">
+            <h1>
+                Uniter PHP NavMenuComponent demo
+            </h1>
+            <p>
+                The logic for this page is written entirely in PHP,
+                see <a href="//github.com/uniter/uniter-jquery/blob/master/php/src/Demo/Component/NavMenuComponent.php">NavMenuComponent</a>
+                for a look at the php code.
+            </p>
+            <p>
+                The tests are written using PHPUnit and run on the command line (for now,)
+                see <a href="//github.com/uniter/uniter-jquery/blob/master/tests/phpunit/Demo/Tests/Component/NavMenuComponentTest.php">NavMenuComponentTest</a>.
+            </p>
+        </div>
+
+        <div class="full_row">
+            <nav>
+                <ol class="primary-nav" id="primary-nav">
+                    <li data-submenu="#submenu1">
+                        <a href="#">Menu 1</a>
+                        <ol class="submenu" id="submenu1">
+                            <li data-submenu="#submenu1_1">
+                                <a href="#">Menu 1 sub 1</a>
+
+                                <ol class="submenu" id="submenu1_1">
+                                    <li data-submenu="#submenu1_1_1">
+                                        <a href="#">Menu 1 sub 1 sub 1</a>
+
+                                        <ol class="submenu" id="submenu1_1_1">
+                                            <li>
+                                                <a href="#">Menu 1 sub 1 sub 1 sub 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Menu 1 sub 1 sub 1 sub 2</a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <a href="#">Menu 1 sub 1 sub 2</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a href="#">Menu 1 sub 2</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li data-submenu="#submenu2">
+                        <a href="#">Menu 2</a>
+                        <ol class="submenu" id="submenu2">
+                            <li>
+                                <a href="#">Menu 2 sub 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Menu 2 sub 2</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="full_row">
+            <h2>
+                <a href="index.html">
+                    Back To Home
+                </a>
+            </h2>
+            <a href="https://github.com/uniter/uniter-jquery">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_green.png" alt="Fork me on GitHub">
+            </a>
+            <script src="dist/bundle.js"></script>
+        </div>
+
+    </body>
+
+</html>
